@@ -1,0 +1,105 @@
+{
+  "name": "@frntnd/eslint",
+  "description": "A standard Eslint config to get started with",
+  "main": "index.js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "bin",
+    "commands"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daphnesmit/frntnd"
+  },
+  "author": {
+    "name": "Daphne Smit",
+    "email": "daphnesmit1986@gmail.com"
+  },
+  "scripts": {
+    "release": "semantic-release"
+  },
+  "bin": {
+    "frntnd-eslint": "./bin/scripts.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "release": {
+    "monorepo": {
+      "debug": true,
+      "analyzeCommits": {
+        "format": "angular"
+      },
+      "generateNotes": {
+        "preset": "angular"
+      }
+    },
+    "extends": "semantic-release-monorepo",
+    "branches": [
+      "main",
+      {
+        "name": "develop",
+        "prerelease": true
+      },
+      {
+        "name": "release",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "semantic-release-slack-bot",
+        {
+          "notifyOnSuccess": true,
+          "notifyOnFail": true,
+          "packageName": "@frntnd/eslint",
+          "markdownReleaseNotes": true
+        }
+      ]
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=16.x",
+    "typescript": "4.x"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "commander": "^9.2.0",
+    "enquirer": "^2.3.6",
+    "eslint": "^8.13.0",
+    "eslint-config-standard": "^17.0.0-1",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "eslint-plugin-testing-library": "^5.3.1"
+  },
+  "devDependencies": {
+    "react": "18.0.0",
+    "semantic-release": "^19.0.2",
+    "semantic-release-monorepo": "^7.0.5",
+    "semantic-release-slack-bot": "^3.5.2",
+    "typescript": "^4.6.3"
+  }
+}

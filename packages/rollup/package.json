@@ -57,16 +57,7 @@
       "@semantic-release/npm",
       "@semantic-release/github",
       "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "semantic-release-slack-bot",
-        {
-          "notifyOnSuccess": true,
-          "notifyOnFail": true,
-          "packageName": "@frntnd/rollup",
-          "markdownReleaseNotes": true
-        }
-      ]
+      "@semantic-release/release-notes-generator"
     ]
   },
   "dependencies": {
@@ -80,7 +71,6 @@
   },
   "devDependencies": {
     "semantic-release": "^19.0.2",
-    "semantic-release-monorepo": "^7.0.5",
-    "semantic-release-slack-bot": "^3.5.2"
+    "semantic-release-monorepo": "^7.0.5"
   }
 }

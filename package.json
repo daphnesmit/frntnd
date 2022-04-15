@@ -1,0 +1,58 @@
+{
+  "name": "@frntnd/root",
+  "version": "1.0.0",
+  "private": "true",
+  "author": {
+    "name": "Daphne Smit",
+    "email": "daphnesmit1986@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daphnesmit/frntnd"
+  },
+  "bugs": {
+    "url": "https://github.com/daphnesmit/frntnd/issues"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "preconstruct": {
+    "packages": [
+      "packages/rollup"
+    ]
+  },
+  "scripts": {
+    "postinstall": "preconstruct dev && manypkg check",
+    "build": "preconstruct build",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint-fix": "eslint --fix . --ext .ts,.tsx,.js,.jsx",
+    "release": "yarn workspaces run release"
+  },
+  "lint-staged": {
+    "**/*.(js|ts|tsx)": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@manypkg/cli": "^0.19.1",
+    "@preconstruct/cli": "^2.1.5",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "eslint-config-standard": "^17.0.0-1",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "eslint-plugin-testing-library": "^5.3.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.8"
+  }
+}

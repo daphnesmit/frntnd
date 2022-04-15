@@ -1,0 +1,40 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release
+
+jobs:
+  build:
+    name: Lint, Build & Release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+
+    - name: Set up Node.js
+      uses: actions/setup-node@master
+      with:
+        node-version: 14
+
+    - name: Yarn install
+      run: yarn install --frozen-lockfile
+
+    - name: Yarn lint
+      run: yarn lint
+      
+    - name: Yarn build
+      run: yarn build
+
+    - name: Semantic Release
+      run: yarn release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

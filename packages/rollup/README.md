@@ -22,8 +22,8 @@ export default {
 }
 ```
 
-The default rollup config uses entry points in your package json from the source prop.
-The package.json should look something like this:
+The default rollup config uses fields like source, main and module from your package.json
+The package.json should therefore look something like this:
 ```json
 {
   // ...other package.json props,

@@ -3,6 +3,7 @@
   "description": "A standard Rollup config to get started with",
   "main": "dist/frntnd-rollup.cjs.js",
   "module": "dist/frntnd-rollup.esm.js",
+  "types": "dist/frntnd-rollup.cjs.d.ts",
   "version": "1.0.0",
   "license": "MIT",
   "files": [

@@ -5,12 +5,12 @@ import typescriptPlugin from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import externals from 'rollup-plugin-node-externals';
 
-function dirname(file) {
+function dirname(file: string) {
   const [root, folder] = file.split('/');
   return `${root}/${folder}`;
 }
 
-function createDefaultRollupConfig(pkg) {
+function createDefaultRollupConfig(pkg: any) {
   return {
     input: pkg.source,
     output: [

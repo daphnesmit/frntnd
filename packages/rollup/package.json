@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/daphnesmit/frntnd"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Daphne Smit",
     "email": "daphnesmit1986@gmail.com"

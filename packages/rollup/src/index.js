@@ -36,7 +36,7 @@ function createDefaultRollupConfig(pkg) {
       resolve(),
       json(),
       typescriptPlugin({
-        exclude: ['**/*.test.tsx', '**/*.stories.tsx'],
+        exclude: ['**/*.test.{ts,tsx}', '**/*.stories.{ts,tsx}'],
       }),
       commonjs(),
     ],

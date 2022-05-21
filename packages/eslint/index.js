@@ -55,14 +55,6 @@ const eslintConfig = {
         format: ['PascalCase'],
         prefix: ['is', 'with', 'should', 'has', 'can', 'did', 'will'],
       },
-      {
-        selector: 'interface',
-        format: ['PascalCase'],
-        custom: {
-          regex: '^I[A-Z]',
-          match: true,
-        },
-      },
     ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [

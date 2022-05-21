@@ -36,6 +36,7 @@
   "dependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.17.12",
     "@manypkg/cli": "^0.19.1",
     "@preconstruct/cli": "^2.1.5",
     "@typescript-eslint/eslint-plugin": "^5.19.0",

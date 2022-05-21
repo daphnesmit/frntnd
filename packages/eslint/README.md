@@ -3,18 +3,41 @@
 ## Extending ESLint
 If you want to use this ESLint configuration in a React project, you can install it with the following steps.
 
-First, install this package by running `npm i @frntnd/eslint -D` .
-Then install ESLint and the necessary plugins. Just copy this line and paste in your terminal.
+Install the package and ESLint. Just copy this line and paste in your terminal:
 
 ```
-npm install --save-dev eslint
+npm i @frntnd/eslint eslint -D
+```
+
+or 
+
+```
+yarn add @frntnd/eslint eslint -D
 ```
 
 Then create a file named .eslintrc.js with following contents in the root folder of your project:
 ```javascript
 module.exports = {
-  extends: ['@frntnd/eslint'], 
+  extends: ['./node_modules/@frntnd/eslint'], 
 }
+```
+
+You can add linting scripts to your package.json scripts like this:
+
+```json
+"scripts": {
+  "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+  "lint-fix": "eslint --fix src --ext .ts,.tsx,.js,.jsx"
+}
+``` 
+
+and then run:
+```
+npm run lint or npm run lint-fix
+```
+or
+```
+yarn lint or yarn lint-fix
 ```
 
 ## Ejecting from ESLint
